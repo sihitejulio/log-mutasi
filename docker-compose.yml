@@ -1,0 +1,17 @@
+version: '2'
+services:
+  mutasi:
+    container_name: app-mutasi
+    image: gcr.io/ascendant-volt-161906/mutasi-service:v0.0.1
+    volumes:
+      - ./var/log:/app/var/log
+    restart: always
+    # ports:
+    #   - "9006:80"
+    tty: true
+    networks: 
+      - inmnetworks
+networks: 
+  inmnetworks:
+    external: true
+
